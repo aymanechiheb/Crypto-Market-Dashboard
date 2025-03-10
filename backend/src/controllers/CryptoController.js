@@ -5,8 +5,8 @@ const CryptoMetadata = require('../models/CryptoMetadata');
 // Récupérer les prix actuels des cryptomonnaies
 const getCurrentPrices = async (req, res) => {
   try {
-    // Récupérer les prix actuels depuis l'API CoinGecko ou la base de données
-    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,cardano,solana,ripple,polkadot,dogecoin,avalanche,litecoin&vs_currencies=usd');
+    // Récupérer les prix actuels depuis l'API CoinGecko avec les nouvelles cryptos ajoutées
+    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,cardano,solana,ripple,polkadot,dogecoin,avalanche,litecoin,lido-staked-ether,wrapped-bitcoin,leo-token,TRON,usd-coin,tether,chainlink&vs_currencies=usd');
     const data = await response.json();
 
     // Envoyer les données au client
