@@ -5,12 +5,11 @@ import App from './App.jsx'
 import Dashboard from './pages/Dashboard'
 import DashboardHeader from './components/DashboardHeader.jsx'
 import ControlPanel from './components/ControlPanel.jsx'
+import HistoryPrice from './components/HistoryPrice.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
    < DashboardHeader />
-   <ControlPanel/>
     <Dashboard />
-
   </StrictMode>,
 )

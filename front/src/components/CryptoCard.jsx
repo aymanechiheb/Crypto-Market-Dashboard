@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'; // Font Awesome icons
 
-const CryptoCard = ({ name, price, symbol }) => {
+const CryptoCard = ({ name, price, symbol,onClick  }) => {
   const [previousPrice, setPreviousPrice] = useState(price);
   const [priceChange, setPriceChange] = useState(null);
 
@@ -22,7 +22,7 @@ const CryptoCard = ({ name, price, symbol }) => {
     <div className={`col-span-1 rounded-2xl shadow-lg p-6 text-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
       priceChange === 'increase' ? 'border-4 border-green-500' :
       priceChange === 'decrease' ? 'border-4 border-red-500' : ''
-    } bg-white`}>
+    } bg-white`} onClick={onClick}>
       <div className="relative h-full">
         {/* Glow Effect */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/20 to-transparent blur-md"></div>
