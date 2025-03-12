@@ -24,7 +24,7 @@ export const getCryptoMetadata = async () => {
 };
 export const getCryptoPriceHistory = async (cryptoId) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/crypto/history/${cryptoId}`);
+    const response = await axios.get(`${API_BASE_URL}/api/crypto/history/${cryptoId}`);
     return response.data;
   } catch (error) {
     console.error(`Erreur lors de la récupération de l'historique des prix de ${cryptoId}:`, error);
