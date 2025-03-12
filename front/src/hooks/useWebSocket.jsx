@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 
-const SOCKET_URL = "ws://localhost:4000";
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
 
 export function useWebSocket() {
     const [cryptoData, setCryptoData] = useState(null);
