@@ -29,8 +29,15 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => console.log('Utilisateur déconnecté'));
 });
 
-process.on('unhandledRejection', (err) => { console.error('Erreur non gérée :', err); process.exit(1); });
-process.on('uncaughtException', (err) => { console.error('Exception non capturée :', err); process.exit(1); });
+process.on('unhandledRejection', (err) => { 
+  console.error('Erreur non gérée :', err); 
+  process.exit(0); 
+});
+
+process.on('uncaughtException', (err) => { 
+  console.error('Exception non capturée :', err); 
+  process.exit(0); 
+});
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => console.log(`Serveur backend en écoute sur le port ${PORT}`));
+server.listen(PORT, '0.0.0.0', () => console.log(`Serveur backend en écoute sur le port ${PORT}`));

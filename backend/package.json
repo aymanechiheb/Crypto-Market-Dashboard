@@ -4,7 +4,9 @@
   "description": "backend pour l'analyse de cypto market en temps réel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "aymane chiheb",
   "license": "ISC",
@@ -14,10 +16,12 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "node-cron": "^3.0.3",
-    "nodemon": "^3.1.9",
     "pg": "^8.13.3",
     "sequelize": "^6.37.6",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
