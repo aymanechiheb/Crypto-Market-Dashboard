@@ -4,27 +4,32 @@ import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import { getCryptoPriceHistory } from "../services/api"; // Assure-toi que le chemin est correct
 
 const HistoryPrice = ({ cryptoId, onClose }) => {
   const [priceHistory, setPriceHistory] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchHistory = async () => {
-      try {
-        const response = await axios.get(`http://localhost:4000/api/crypto/history/${cryptoId}`);
-        setPriceHistory(response.data);
-        console.log(response);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Erreur lors de la récupération de l'historique des prix:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
 
+useEffect(() => {
+  const fetchHistory = async () => {
+    setLoading(true);
+    try {
+      const data = await getCryptoPriceHistory(cryptoId);
+      setPriceHistory(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Erreur lors de la récupération de l'historique des prix:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (cryptoId) {
     fetchHistory();
-  }, [cryptoId]);
+  }
+}, [cryptoId]);
+
 
   return (
     <motion.div 
