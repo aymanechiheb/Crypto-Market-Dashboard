@@ -1,6 +1,6 @@
 // src/models/CryptoPrice.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const sequelize = require('../Config/db');
 
 const CryptoPrice = sequelize.define('CryptoPrice', {
   id: {

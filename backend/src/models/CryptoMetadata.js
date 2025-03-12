@@ -1,6 +1,6 @@
 // src/models/CryptoMetadata.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const sequelize = require('../Config/db');
 
 const CryptoMetadata = sequelize.define('CryptoMetadata', {
   cryptoId: {
