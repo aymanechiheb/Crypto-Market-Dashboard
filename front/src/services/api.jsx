@@ -4,7 +4,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export const getCryptoPrices = async () => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/crypto/prices`);
+    const response = await axios.get(`${API_BASE_URL}/api/crypto/prices`);
     return response.data;
   } catch (error) {
     console.error('Erreur lors de la récupération des prix:', error);
@@ -14,7 +14,7 @@ export const getCryptoPrices = async () => {
 
 export const getCryptoMetadata = async () => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/crypto/metadata`);
+    const response = await axios.get(`${API_BASE_URL}/api/crypto/metadata`);
     return response.data;
   } catch (error) {
     console.error('Erreur lors de la récupération des métadonnées:', error);
